@@ -4,7 +4,6 @@ signal analog_force_change(force, analog)
 
 const INACTIVE_IDX = -1;
 export var isDynamicallyShowing = false
-export var padname = ""
 
 var ball
 var bg 

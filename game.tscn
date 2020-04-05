@@ -25,11 +25,13 @@ margin_left = 881.0
 margin_top = 71.0
 margin_right = 1200.0
 margin_bottom = 640.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnalogLeft" parent="UI/AreaAnalogLeft" instance=ExtResource( 5 )]
 position = Vector2( 251.294, 498.692 )
 isDynamicallyShowing = true
-padname = "leftPad"
 
 [node name="AreaAnalogRight" type="Control" parent="UI"]
 margin_left = 75.0
@@ -43,6 +45,5 @@ __meta__ = {
 [node name="AnalogRight" parent="UI/AreaAnalogRight" instance=ExtResource( 5 )]
 position = Vector2( 64.2845, 496.744 )
 isDynamicallyShowing = true
-padname = "rightPad"
 [connection signal="analog_force_change" from="UI/AreaAnalogLeft/AnalogLeft" to="player" method="analog_force_change"]
 [connection signal="analog_force_change" from="UI/AreaAnalogRight/AnalogRight" to="player" method="analog_force_change"]
