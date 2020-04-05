@@ -1,8 +1,9 @@
 extends Node2D
 
+signal analog_force_change(force, analog)
+
 const INACTIVE_IDX = -1;
 export var isDynamicallyShowing = false
-export var listenerNodePath = "/root/game/player"
 export var padname = ""
 
 var ball
@@ -26,11 +27,6 @@ func _ready():
 	parent = get_parent()
 	halfSize = bg.texture.get_size()/2
 	squaredHalfSizeLength = halfSize.x * halfSize.y
-	
-	if (listenerNodePath != "" && listenerNodePath!=null):
-		listenerNodePath = get_node(listenerNodePath)
-	elif listenerNodePath=="":
-		listenerNodePath = null
 
 #	isDynamicallyShowing = isDynamicallyShowing and parent extends Control
 	if isDynamicallyShowing:
@@ -66,7 +62,7 @@ func need2ChangeActivePointer(event): #touch down inside analog
 			var length = (global_position - Vector2(event.position.x, event.position.y)).length_squared();
 			return length < squaredHalfSizeLength
 	else:
-	 	return false
+		return false
 
 func isActive():
 	return currentPointerIDX != INACTIVE_IDX
@@ -130,8 +126,7 @@ func calculateForce(var x, var y):
 	sendSignal2Listener()
 
 func sendSignal2Listener():
-	if (listenerNodePath != null):
-		listenerNodePath.analog_force_change(currentForce, self)
+	emit_signal("analog_force_change", currentForce, self)
 
 func isPressed(event):
 	if event is InputEventMouseMotion:
