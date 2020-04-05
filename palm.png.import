@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/palm.png-faf9d7ecc63245b12b0a8e6cbc3a7448.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://palm.png"
-source_md5="e6bc235645bd64d2820c450651e9b3bf"
-
 dest_files=[ "res://.import/palm.png-faf9d7ecc63245b12b0a8e6cbc3a7448.stex" ]
-dest_md5="def35e9abe12c5c9d8feb36470a4e80f"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true
